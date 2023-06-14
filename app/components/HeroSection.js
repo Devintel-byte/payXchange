@@ -6,8 +6,8 @@ import heroImage from '../../public/hero-image1.jpg'
 import trustPilot from '../../public/logo-white-trustpilot-copy.svg'
 import dynamic from 'next/dynamic'
 
-const Component1 = dynamic(() => import('../components/SelCountryDropdown'))
-const Component2 = dynamic(() => import('../components/SelCountryDropdown'))
+const Component1 = dynamic(() => import('./SendField'))
+const Component2 = dynamic(() => import('./ReceiveField'))
 
 const HeroSection = () => {
 
@@ -81,7 +81,7 @@ const HeroSection = () => {
                                 pattern="[0-9]*" 
                                 value={inputValue}
                                 onChange={handleChange} 
-                                aria-labelledby="send-field-input-label"
+                                aria-labelledby="send-field-amount"
                                 className="inputFrame shadow-none h-9 p-0 text-4xl w-full border-0 m-0 block min-w-0 bg-none box-content font-bold leading-5 outline-none placeholder:text-purple-700"/>
                             </div>
                         </div>
@@ -102,13 +102,13 @@ const HeroSection = () => {
                         <span className=" text-zinc-700 text-base font-medium m-0">They Get</span>
                         <div className="text-purple-700 font-bold pr-2 inline-flex cursor-text relative text-base box-border items-center">
                             <input autoComplete="off" 
-                            id="send-field-amount"
+                            id="recieve-field-amount"
                             placeholder="100.00" 
                             type="decimal" 
                             inputMode="numeric" pattern="[0-9]*" 
                             value={inputValue} 
                             onChange={handleChange} 
-                            aria-labelledby="send-field-input-label" 
+                            aria-labelledby="send-field-amount" 
                             className="inputFrame shadow-none h-9 p-0 text-4xl w-full border-0 m-0 block min-w-0 bg-none box-content font-bold leading-5 outline-none placeholder:text-purple-700"/>
                         </div>
                     </div>
@@ -132,6 +132,7 @@ const HeroSection = () => {
                                 <div className="border-0 m-0 inline-flex p-0 relative min-w-0 flex-col align-top" aria-expanded='false' aria-haspopup='listbox'>
                                     <div className="relative rounded inline-flex box-border items-center font-normal text-base" style={{paddingRight: '14px'}}>
                                         <input 
+                                        id='payment-method-label'
                                         className="inputFrame inputStyle text-black font-bold w-full border-0 m-0 block box-content bg-none min-w-0 outline-0" 
                                         aria-invalid='false' 
                                         type="text" 

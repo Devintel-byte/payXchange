@@ -67,7 +67,7 @@ const LogIn = () => {
                     <h1 className="text-5xl mb-8 leading-[1.2] m-0 text-left font-bold">
                       Sign in and send money to your friends and family
                     </h1>
-                    <form action="">
+                    <form action="" id='login-form-field'>
                       <div className="w-full mb-4 relative">
                         <label
                           htmlFor="email-input"
@@ -83,6 +83,7 @@ const LogIn = () => {
                             id="email-input"
                             type="email"
                             name="email"
+                            aria-labelledby='login-form-field'
                             className={`w-full px-4 py-[1.25rem] border-0 bg-transparent focus:outline-none ${
                               emailFocused ? 'text-black' : ''
                             }`}

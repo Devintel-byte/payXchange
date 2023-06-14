@@ -1,13 +1,17 @@
+'use client'
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { AiOutlineSearch } from 'react-icons/ai';
 import axios from 'axios';
 
-const SelCountryDropdown = () => {
+const RecieveField = () => {
   const [inputValue, setInputValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
   const [countries, setCountries] = useState([]);
+  const [selectedOption, setSelectedOption] = useState({
+    name: 'Canada',
+    flag: 'https://flagcdn.com/ca.svg'
+  })
 
   useEffect(() => {
     // Fetch countries from API
@@ -23,13 +27,6 @@ const SelCountryDropdown = () => {
 
     fetchData();
   }, []);
-
-  useEffect(() => {
-    const defaultCountry = countries.find((country) => country.name === 'United States');
-    if (defaultCountry) {
-      setSelectedOption(defaultCountry);
-    }
-  }, [countries]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -66,11 +63,11 @@ const SelCountryDropdown = () => {
       >
         {selectedOption ? (
           <>
-            <Image src={selectedOption.flag} alt="country-flag" width={28} height={28} className="self-center cursor-pointer mr-2" />
+            <Image src={selectedOption.flag} alt="country-flag" width={32} height={32} className="self-center cursor-pointer mr-2" />
             <strong className="text-white text-lg font-bold m-0">{getCurrencyCode(selectedOption)}</strong>
             <svg
               className="inline-block transition-transform duration-200 transform font-semibold"
-              style={{ fontSize: '2em', color: 'white', fill: 'currentcolor', width: '1em', height: '1em' }}
+              style={{ fontSize: '2.5em', color: 'white', fill: 'currentcolor', width: '1em', height: '1em' }}
               focusable="false"
               viewBox="0 0 24 24"
               color="white"
@@ -103,13 +100,13 @@ const SelCountryDropdown = () => {
                 <input
                   aria-invalid="false"
                   autoComplete="off"
-                  id="send-field-container-search-input"
+                  id="receive-field-container-search-input"
                   placeholder="Enter a country or currency"
                   type="text"
                   aria-autocomplete="list"
                   autoCapitalize="none"
                   spellCheck="false"
-                  aria-controls="send-field-container-search-input-popup"
+                  aria-controls="receive-field-container-search-input-popup"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value.toLowerCase())}
                   className={inputClassName}
@@ -164,4 +161,4 @@ const SelCountryDropdown = () => {
   );
 };
 
-export default SelCountryDropdown;
+export default RecieveField;
