@@ -44,13 +44,13 @@ export default function NavbarTwo() {
                         <nav className={`hidden md:flex ${isMenuOpen ? 'hidden' : 'flex'} navUI w-full flex items-center justify-between`}>
                             <ul className="UnlistUI m-0 p-0 flex ml-auto">
                                 <li className="listUI w-auto flex items-center whitespace-nowrap">
-                                    <Link href='/how-it-works' className="p-1 hover:bg-purple-700">How it works</Link>
+                                    <Link href='/how-it-works' className="p-1 hover:bg-purple-700 hover:text-white">How it works</Link>
                                 </li>
                                 <li className="listUI w-auto flex items-center whitespace-nowrap">
-                                    <Link href='/faq' className="p-1 hover:bg-purple-700">Help</Link>
+                                    <Link href='/faq' className="p-1 hover:bg-purple-700 hover:text-white">Help</Link>
                                 </li>
                                 <li className="listUI w-auto flex items-center whitespace-nowrap">
-                                    <Link href='/login' className="p-1 hover:bg-purple-700">Log in</Link>
+                                    <Link href='/login' className="p-1 hover:bg-purple-700 hover:text-white">Log in</Link>
                                 </li>
                                 <li className="listUI w-auto flex items-center whitespace-nowrap">
                                     <a className="navBtn-root text-white bg-purple-700 hover:bg-purple-900 shadow-none box-border font-bold rounded cursor-pointer" tabIndex='0' aria-disabled='false'>

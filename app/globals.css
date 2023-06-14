@@ -295,6 +295,13 @@ li {
   cursor: auto;
 }
 
+.labelDecor {
+  color: #813FD6;
+  transform: translate(14px, 17px) scale(1);
+  transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  transform-origin: top left;
+}
+
 input:not([type="range"]):not([type="color"]) {
   writing-mode: horizontal-tb !important;
 }

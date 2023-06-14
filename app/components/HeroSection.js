@@ -132,7 +132,7 @@ const HeroSection = () => {
                                 <div className="border-0 m-0 inline-flex p-0 relative min-w-0 flex-col align-top" aria-expanded='false' aria-haspopup='listbox'>
                                     <div className="relative rounded inline-flex box-border items-center font-normal text-base" style={{paddingRight: '14px'}}>
                                         <input 
-                                        className="inputFrame inputStyle text-black font-bold w-full border-0 m-0 block box-content bg-none min-w-0 outline-none" 
+                                        className="inputFrame inputStyle text-black font-bold w-full border-0 m-0 block box-content bg-none min-w-0 outline-0" 
                                         aria-invalid='false' 
                                         type="text" 
                                         aria-labelledby="payment-method-label" 
