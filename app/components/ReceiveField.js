@@ -1,4 +1,3 @@
-'use client'
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -9,8 +8,9 @@ const RecieveField = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [countries, setCountries] = useState([]);
   const [selectedOption, setSelectedOption] = useState({
-    name: 'Canada',
-    flag: 'https://flagcdn.com/ca.svg'
+    name: 'Canada', // Default country name
+    flag: 'https://flagcdn.com/ca.svg', // Flag url
+    currencyCode: 'CAD' // Currency code tag
   })
 
   useEffect(() => {
@@ -44,7 +44,9 @@ const RecieveField = () => {
     return '';
   };
 
-  const inputClassName = inputValue ? 'magUnd1 w-0 p-1 min-w-[30px] grow overflow-ellipsis border-0 m-0 block bg-none box-content font-medium placeholder:border-0 text-black' : 'magUnd1 w-0 p-1 min-w-[30px] grow overflow-ellipsis opacity-[0.5] border-0 m-0 block bg-none box-content font-medium placeholder:border-0';
+  const inputClassName = inputValue 
+  ? 'magUnd1 w-0 p-1 min-w-[30px] grow overflow-ellipsis border-0 m-0 block bg-none box-content font-medium placeholder:border-0 text-black' 
+  : 'magUnd1 w-0 p-1 min-w-[30px] grow overflow-ellipsis opacity-[0.5] border-0 m-0 block bg-none box-content font-medium placeholder:border-0';
 
   const filteredCountries = countries.filter((country) => {
     const countryName = country.name.toLowerCase();
@@ -64,7 +66,12 @@ const RecieveField = () => {
         {selectedOption ? (
           <>
             <Image src={selectedOption.flag} alt="country-flag" width={32} height={32} className="self-center cursor-pointer mr-2" />
-            <strong className="text-white text-lg font-bold m-0">{getCurrencyCode(selectedOption)}</strong>
+            <div className='flex flex-col'>
+            <strong className="text-white text-lg font-bold m-0">
+            {getCurrencyCode(selectedOption)}
+            <span className="text-white text-xl">{selectedOption.currencyCode}</span>
+            </strong>
+            </div>
             <svg
               className="inline-block transition-transform duration-200 transform font-semibold"
               style={{ fontSize: '2.5em', color: 'white', fill: 'currentcolor', width: '1em', height: '1em' }}
