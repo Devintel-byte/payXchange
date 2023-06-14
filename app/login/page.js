@@ -182,8 +182,34 @@ const LogIn = () => {
                       >
                         Continue
                       </button>
-
                     </form>
+
+                    <div className='rounded-lg mt-8' style={{border: '1px solid #BDBDBD'}}>
+                        <a className='flex p-4 no-underline m-0 text-black hover:text-purple-500' href='#'>
+                          <span className='grow text-base font-medium leading-5'>Forgotten password? Reset it here</span>
+                          <svg className="w-4 h-4 inline-block shrink-0 text-[1.25rem] select-none font-semibold" 
+                          style={{fill: 'currentcolor', transition: 'fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'}}
+                          focusable="false" 
+                          viewBox="0 0 24 24" 
+                          aria-hidden="true">
+                          <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5z">
+                          </path>
+                          </svg>
+                        </a>
+                        <hr className='bg-[#BDBDBD] h-[1px]'/>
+                        <a className='flex p-4 no-underline m-0 text-black hover:text-purple-500' href='#'>
+                          <span className='grow text-base font-medium leading-5'>New to PayXchange? Signing up here</span>
+                          <svg className="w-4 h-4 inline-block shrink-0 text-[1.25rem] select-none font-semibold" 
+                          style={{fill: 'currentcolor', transition: 'fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'}}
+                          focusable="false" 
+                          viewBox="0 0 24 24" 
+                          aria-hidden="true">
+                          <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5z">
+                          </path>
+                          </svg>
+                        </a>
+                      </div>
+                    
                   </div>
                 </div>
                 <div className="flex-grow-0 flex-basis-1/2 max-w-[50%] m-0 box-border">
@@ -225,8 +251,8 @@ const LogIn = () => {
                     width={800} 
                     height={700}
                     decoding='async'
-                    loading='lazy'
                     title='PayXchange login display Desktop'
+                    priority
                     />         
                   </div>
                   </div>
