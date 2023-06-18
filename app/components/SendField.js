@@ -127,7 +127,7 @@ const SendField = () => {
               </div>
             </div>
           </div>
-          <div className="w-[362px] relative z-[1300]" role="presentation">
+          <div className="w-[364px] relative z-[1300]" role="presentation">
             <div
               className="overflow-hidden m-0 shadow-none text-[#586069]"
               style={{ fontSize: '0.8125rem', borderBottomLeftRadius: '16px', borderBottomRightRadius: '16px' }}

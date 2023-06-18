@@ -65,7 +65,12 @@ const RecieveField = () => {
       >
         {selectedOption ? (
           <>
-            <Image src={selectedOption.flag} alt="country-flag" width={32} height={32} className="self-center cursor-pointer mr-2" />
+            <Image 
+            src={selectedOption.flag} 
+            alt="country-flag" 
+            width={32} 
+            height={32} 
+            className="self-center cursor-pointer mr-2" />
             <div className='flex flex-col'>
             <strong className="text-white text-lg font-bold m-0">
             {getCurrencyCode(selectedOption)}
@@ -122,7 +127,7 @@ const RecieveField = () => {
               </div>
             </div>
           </div>
-          <div className="w-[362px] relative z-[1300]" role="presentation">
+          <div className="w-[364px] relative z-[1300]" role="presentation">
             <div
               className="overflow-hidden m-0 shadow-none text-[#586069]"
               style={{ fontSize: '0.8125rem', borderBottomLeftRadius: '16px', borderBottomRightRadius: '16px' }}

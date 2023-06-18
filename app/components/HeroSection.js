@@ -12,6 +12,7 @@ const Component2 = dynamic(() => import('./ReceiveField'))
 const HeroSection = () => {
 
     const [inputValue, setInputValue] = useState('');
+    const [ isOpen, setIsOpen ] = useState(false);
     
     const handleChange = (e) => {
         const value = e.target.value
@@ -20,6 +21,10 @@ const HeroSection = () => {
             setInputValue(value)
           }
     };
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen)
+    }
 
   return (
     <main className='block font-sans'>
@@ -133,14 +138,21 @@ const HeroSection = () => {
                                     <div className="relative rounded inline-flex box-border items-center font-normal text-base" style={{paddingRight: '14px'}}>
                                         <input 
                                         id='payment-method-label'
-                                        className="inputFrame inputStyle text-black font-bold w-full border-0 m-0 block box-content bg-none min-w-0 outline-0" 
+                                        className="inputFrame inputStyle text-black font-bold w-full border-0 m-0 block box-content bg-none min-w-0 outline-0 focus:border-0  focus:shadow-none focus:ring-0" 
                                         aria-invalid='false' 
                                         type="text" 
                                         aria-labelledby="payment-method-label" 
                                         value='Bank transfer' 
                                         readOnly />
-                                        <div className="ml-2 flex whitespace-nowrap items-center" style={{height: '0.01em', maxHeight: '2em'}}>
-                                        <svg className="w-4 h-4 inline-block font-bold shrink-0 select-none" style={{fontSize: '2rem', color: '#22AABA', fill: 'currentcolor', width: '1em', height: '1em'}} focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="payout-select-input-img">
+                                        <div className="ml-2 flex whitespace-nowrap items-center" 
+                                        style={{height: '0.01em', maxHeight: '2em'}}
+                                        onClick={toggleDropdown}>
+                                        <svg className="w-4 h-4 inline-block font-bold shrink-0 select-none" 
+                                        style={{fontSize: '2rem', color: '#22AABA', fill: 'currentcolor', width: '1em', height: '1em'}} 
+                                        focusable="false" 
+                                        viewBox="0 0 24 24" 
+                                        aria-hidden="true" 
+                                        data-testid="payout-select-input-img">
                                         <path d="M15.88 9.29L12 13.17 8.12 9.29a.9959.9959 0 00-1.41 0c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z">
                                         </path>
                                         </svg>
@@ -154,6 +166,31 @@ const HeroSection = () => {
                                 </div>
                             </div>
                         </div>
+
+                        {isOpen && (
+                            <div role='tooltip'
+                            className='w-[366px] absolute top-0 left-0 z-[1300] mt-2 overflow-hidden' 
+                            style={{transform: 'translate3d(32px, 338px, 0px)', willChange: 'transform', color: '#586069', border: '1px solid #eaecef', borderRadius: '15px', boxShadow: '0 2px 7px 6px rgba(0, 0, 0, 0.1)'}}>
+                                <ul id='payout-method-dropdown-list' 
+                                className='max-w-[27.5rem] overflow-y-auto text-[0.875rem] px-4 py-2 font-medium rounded-2xl bg-white leading-[1.57] m-0'>
+                                    <div className='text-[#3D1152] mt-2 pl-2 mb-4 pr-2 font-bold leading-[1.2] text-[1.25rem] m-0'>Receive method</div>
+                                    <div className='border-[#813FD6] border-2 border-solid block rounded mb-2 w-full relative box-border text-left no-underline' 
+                                    style={{padding: '12px 8px'}}
+                                    role='option'
+                                    aria-selected='true'
+                                    tabIndex='0'
+                                    >
+                                        <div className='mb-3'>
+                                            <p className='text-[#813FD6] text-base leading-5 font-medium m-0'>
+                                                <strong>Bank Transfer</strong>
+                                            </p>
+                                            <p className='text-base leading-5 font-medium m-0'>Send directly to a bank</p>
+                                        </div>
+                                        <p className='text-[0.875rem] leading-5 font-medium m-0'>90% of bank transfers with WorldRemit are completed the same day.</p>
+                                    </div>
+                                </ul>
+                            </div>
+                        )}
                     </div>
                 </div>
                 <button className="block mt-6 w-full text-xl text-white bg-purple-700 box-border shadow-none p-4 rounded font-bold m-0 border-0 cursor-pointer outline-0 relative select-none" style={{minWidth: 'unset'}}>
