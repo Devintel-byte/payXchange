@@ -135,10 +135,12 @@ const HeroSection = () => {
                         <div className="flex justify-end conSpace">
                             <div className="" data-testid='payment-method-select'>
                                 <div className="border-0 m-0 inline-flex p-0 relative min-w-0 flex-col align-top" aria-expanded='false' aria-haspopup='listbox'>
-                                    <div className="relative rounded inline-flex box-border items-center font-normal text-base" style={{paddingRight: '14px'}}>
+                                    <div className="relative rounded inline-flex box-border items-center font-normal text-base cursor-pointer" 
+                                    style={{paddingRight: '14px'}}
+                                    onClick={toggleDropdown}>
                                         <input 
                                         id='payment-method-label'
-                                        className="inputFrame inputStyle text-black font-bold w-full border-0 m-0 block box-content bg-none min-w-0 outline-0 focus:border-0  focus:shadow-none focus:ring-0" 
+                                        className="inputFrame inputStyle text-black font-bold w-full border-0 m-0 block box-content bg-none min-w-0 outline-0 focus:border-0  focus:shadow-none focus:ring-0 cursor-pointer" 
                                         aria-invalid='false' 
                                         type="text" 
                                         aria-labelledby="payment-method-label" 
@@ -146,7 +148,7 @@ const HeroSection = () => {
                                         readOnly />
                                         <div className="ml-2 flex whitespace-nowrap items-center" 
                                         style={{height: '0.01em', maxHeight: '2em'}}
-                                        onClick={toggleDropdown}>
+                                        >
                                         <svg className="w-4 h-4 inline-block font-bold shrink-0 select-none" 
                                         style={{fontSize: '2rem', color: '#22AABA', fill: 'currentcolor', width: '1em', height: '1em'}} 
                                         focusable="false" 
@@ -174,7 +176,7 @@ const HeroSection = () => {
                                 <ul id='payout-method-dropdown-list' 
                                 className='max-w-[27.5rem] overflow-y-auto text-[0.875rem] px-4 py-2 font-medium rounded-2xl bg-white leading-[1.57] m-0'>
                                     <div className='text-[#3D1152] mt-2 pl-2 mb-4 pr-2 font-bold leading-[1.2] text-[1.25rem] m-0'>Receive method</div>
-                                    <div className='border-[#813FD6] border-2 border-solid block rounded mb-2 w-full relative box-border text-left no-underline' 
+                                    <div className='border-[#813FD6] border-[3px] border-solid block rounded mb-2 w-full relative box-border text-left no-underline cursor-pointer' 
                                     style={{padding: '12px 8px'}}
                                     role='option'
                                     aria-selected='true'
@@ -186,7 +188,21 @@ const HeroSection = () => {
                                             </p>
                                             <p className='text-base leading-5 font-medium m-0'>Send directly to a bank</p>
                                         </div>
-                                        <p className='text-[0.875rem] leading-5 font-medium m-0'>90% of bank transfers with WorldRemit are completed the same day.</p>
+                                        <p className='text-[0.875rem] leading-5 font-medium m-0'>90% of bank transfers with PayXchange are completed the same day.</p>
+                                    </div>
+                                    <div className='border-[#813FD6] block rounded mb-2 w-full relative box-border text-left no-underline cursor-pointer' 
+                                    style={{border: '3px solid transparent', padding: '12px 8px'}}
+                                    role='option'
+                                    aria-selected='true'
+                                    tabIndex='1'
+                                    >
+                                        <div className='mb-3'>
+                                            <p className='text-[#813FD6] text-base leading-5 font-medium m-0'>
+                                                <strong>Airtime Top up</strong>
+                                            </p>
+                                            <p className='text-base leading-5 font-medium m-0'>Send money for airtime top up</p>
+                                        </div>
+                                        <p className='text-[0.875rem] leading-5 font-medium m-0'>90% of PayXchange airtime transfers are received in less than 10 minutes.</p>
                                     </div>
                                 </ul>
                             </div>
